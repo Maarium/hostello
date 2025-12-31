@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Hostello" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!--    primary-->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Theme.Hostello" parent="Base.Theme.Hostello" />
+
+    <!--    splash screen-->
+    <style name="SplashScreen" parent="Theme.Material3.DayNight.NoActionBar">   
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
+</resources>
