@@ -1,18 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme -->
     <style name="Base.Theme.Hostello" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <!--    primary-->
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorPrimaryVariant">@color/blue</item>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here -->
     </style>
 
     <style name="Theme.Hostello" parent="Base.Theme.Hostello" />
 
-    <!--    splash screen-->
-    <style name="SplashScreen" parent="Theme.Material3.DayNight.NoActionBar">   
-        <item name="android:windowBackground">@drawable/splash</item>
+    <!-- Splash Screen Theme -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_bg_color</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/hostello_logo</item>
+        <item name="windowSplashScreenAnimationDuration">2000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Hostello</item>
     </style>
 </resources>
