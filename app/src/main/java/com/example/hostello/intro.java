@@ -23,7 +23,7 @@ public class intro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Navigate to main activity or next screen
-                Intent intent = new Intent(intro.this, HomeActivity.class);
+                Intent intent = new Intent(intro.this, buy_or_sell.class);
                 startActivity(intent);
                 finish();
             }
