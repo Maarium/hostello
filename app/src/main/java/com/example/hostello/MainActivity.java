@@ -2,17 +2,14 @@ package com.example.hostello;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AnticipateInterpolator;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -31,29 +28,29 @@ public class MainActivity extends AppCompatActivity {
         logo = findViewById(R.id.hostello_logo);
         tagline = findViewById(R.id.tagline);
 
-        // Choose your animation style - uncomment one:
+        // Choose your animation style - uncomment ONE:
 
-         animateScaleAndBounce();           // Option 1: Scale + Bounce
-       //  animateSlideFromTop();             // Option 2: Slide from top
-        // animateRotateAndScale();           // Option 3: Rotate + Scale
-         animateZoomPulse();                // Option 4: Zoom Pulse
-         //animateFlipIn();                   // Option 5: 3D Flip
-         animateElasticBounce();            // Option 6: Elastic Bounce
-         animateFadeSlideUp();              // Option 7: Fade + Slide Up
-        //animateShakeAndGrow();             // Option 8: Shake + Grow (NEW!)
-         //animateWaveEffect();               // Option 9: Wave Effect (NEW!)
-        // animateSpiralIn();                 // Option 10: Spiral In (NEW!)
+        animateScaleAndBounce();           // Option 1: Scale + Bounce (ACTIVE)
+        // animateSlideFromTop();          // Option 2: Slide from top
+        // animateRotateAndScale();        // Option 3: Rotate + Scale
+        // animateZoomPulse();             // Option 4: Zoom Pulse
+        // animateFlipIn();                // Option 5: 3D Flip
+        // animateElasticBounce();         // Option 6: Elastic Bounce
+        // animateFadeSlideUp();           // Option 7: Fade + Slide Up
+        // animateShakeAndGrow();          // Option 8: Shake + Grow
+        // animateWaveEffect();            // Option 9: Wave Effect
+        // animateSpiralIn();              // Option 10: Spiral In
 
-        // Navigate to home after animation
+        // Navigate to IntroActivity after animation
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                Intent intent = new Intent(MainActivity.this, intro.class);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
-        }, 3500);
+        }, 2500);
     }
 
     // Option 1: Scale up with bounce
@@ -204,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
         animateTagline(700);
     }
 
-    // Option 8: Shake and grow (NEW!)
+    // Option 8: Shake and grow
     private void animateShakeAndGrow() {
         logo.setScaleX(0.5f);
         logo.setScaleY(0.5f);
@@ -237,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
         animateTagline(1000);
     }
 
-    // Option 9: Wave effect (NEW!)
+    // Option 9: Wave effect
     private void animateWaveEffect() {
         logo.setScaleX(0f);
         logo.setScaleY(0f);
@@ -261,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
         animateTagline(1000);
     }
 
-    // Option 10: Spiral in (NEW!)
+    // Option 10: Spiral in
     private void animateSpiralIn() {
         logo.setScaleX(0f);
         logo.setScaleY(0f);
