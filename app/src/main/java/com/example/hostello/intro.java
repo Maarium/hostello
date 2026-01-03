@@ -22,7 +22,7 @@ public class intro extends AppCompatActivity {
         getStartedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Navigate to main activity or next screen
+                // Navigate to buy or sell activity
                 Intent intent = new Intent(intro.this, buy_or_sell.class);
                 startActivity(intent);
                 finish();

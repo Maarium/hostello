@@ -9,18 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
         <activity
-<<<<<<< Updated upstream
-            android:name=".buy_or_sell"
-            android:exported="false" />
-        <activity
             android:name=".intro"
-=======
-            android:name=".intro2"
->>>>>>> Stashed changes
             android:exported="false" />
-        <activity
-            android:name=".intro"
-            android:exported="false" /> <!-- Splash Screen Activity -->
+        <!-- Splash Screen Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -30,11 +21,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- Main App Activity -->
+        </activity> <!-- Main App Activity -->
         <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.Hostello" />
     </application>
+
 </manifest>
