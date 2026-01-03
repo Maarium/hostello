@@ -1,5 +1,6 @@
 package com.example.hostello;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.CheckBox;
@@ -25,20 +26,13 @@ public class OwnerRegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_registration);
 
-        initializeViews();
-        setupClickListeners();
-    }
-
-    private void initializeViews() {
         backButton = findViewById(R.id.back_button);
         fullNameInput = findViewById(R.id.full_name_input);
         emailInput = findViewById(R.id.email_input);
         passwordInput = findViewById(R.id.password_input);
         termsCheckbox = findViewById(R.id.terms_checkbox);
         registerButton = findViewById(R.id.register_button);
-    }
 
-    private void setupClickListeners() {
         backButton.setOnClickListener(v -> finish());
 
         registerButton.setOnClickListener(v -> handleRegistration());
@@ -85,6 +79,15 @@ public class OwnerRegistrationActivity extends AppCompatActivity {
             return;
         }
 
-        Toast.makeText(this, "Registration Successful!", Toast.LENGTH_LONG).show();
+        // ✅ SUCCESS → MOVE TO DOCUMENT PAGE
+        Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(
+                OwnerRegistrationActivity.this,
+                OwnerDocumentSubmissionActivity.class
+        );
+
+        startActivity(intent);
+        finish();
     }
 }

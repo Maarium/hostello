@@ -8,7 +8,7 @@
         android:roundIcon="@drawable/host_logo_02"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
- 
+
         <activity
             android:name=".OwnerDocumentSubmissionActivity"
             android:exported="false" />
