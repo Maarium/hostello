@@ -1,43 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".buy_or_sell">
 
-    <!-- Logo at top center -->
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/back_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/back"
+        android:src="@android:drawable/ic_menu_revert"
+        app:tint="@color/dark_blue" />
+
+    <!-- Logo -->
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="320dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        android:src="@drawable/host_logo_02"
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/logo"
         android:scaleType="fitCenter"
-        android:contentDescription="@string/logo" />
+        app:srcCompat="@drawable/splash" />
 
-    <!-- Main content container -->
+    <!-- Spacer to push content down -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Content Container -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:gravity="center"
         android:paddingStart="32dp"
-        android:paddingEnd="32dp">
+        android:paddingEnd="32dp"
+        android:paddingBottom="60dp">
 
         <!-- Main heading -->
         <TextView
-            android:id="@+id/main_heading"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="@string/how_do_you_want_to_proceed"
+            android:textAlignment="center"
+            android:textColor="@color/dark_blue"
             android:textSize="28sp"
-            android:textColor="#0D47A1"
             android:textStyle="bold"
-            android:gravity="center"
-            android:lineSpacingExtra="4dp"
-            android:fontFamily="sans-serif-medium" />
+            android:lineSpacingExtra="4dp" />
 
         <!-- Owner Button -->
         <androidx.cardview.widget.CardView
@@ -45,8 +64,6 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             app:cardCornerRadius="28dp"
             app:cardElevation="4dp"
             app:cardBackgroundColor="#1565C0"
@@ -72,8 +89,6 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             app:cardCornerRadius="28dp"
             app:cardElevation="4dp"
             app:cardBackgroundColor="#1565C0"
@@ -95,4 +110,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

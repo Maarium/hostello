@@ -3,41 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#FFFFFF">
 
-    <!-- Logo at top center -->
+    <!-- Logo at top -->
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="320dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:src="@drawable/host_logo_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:contentDescription="@string/logo"
         android:scaleType="fitCenter"
-        android:contentDescription="Hostello Logo" />
+        app:srcCompat="@drawable/splash" />
 
-    <!-- Main content container -->
+    <!-- Main content container - positioned in lower part of screen -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp"
         android:orientation="vertical"
         android:gravity="center"
-        android:paddingLeft="32dp"
-        android:paddingRight="32dp">
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp">
 
         <!-- Main heading -->
         <TextView
             android:id="@+id/main_heading"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="More than a hostel.\nIt's a home."
+            android:textAlignment="center"
+            android:textColor="@color/dark_blue"
             android:textSize="28sp"
-            android:textColor="#0D47A1"
             android:textStyle="bold"
-            android:gravity="center"
-            android:lineSpacingExtra="4dp"
-            android:fontFamily="sans-serif-medium" />
+            android:lineSpacingExtra="4dp" />
 
         <!-- Subtitle -->
         <TextView
@@ -57,30 +58,24 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:cardCornerRadius="28dp"
             app:cardElevation="4dp"
+            app:cardBackgroundColor="#1565C0"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#1565C0">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Get Started"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:fontFamily="sans-serif-medium" />
-
-            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Get Started"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
 
         </androidx.cardview.widget.CardView>
 

@@ -1,47 +1,69 @@
 package com.example.hostello;
 
-import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.MotionEvent;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
+import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class buy_or_sell extends AppCompatActivity {
+
+    private CardView ownerButton;
+    private CardView memberButton;
+    private ImageButton backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_buy_or_sell);
 
-        Button ownerButton = findViewById(R.id.owner_button);
-        Button memberButton = findViewById(R.id.member_button);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
-        setupButtonEffect(ownerButton);
-        setupButtonEffect(memberButton);
+        initializeViews();
+        setupClickListeners();
+        setupBackPressHandler();
+    }
+
+    private void initializeViews() {
+        backButton = findViewById(R.id.back_button);
+        ownerButton = findViewById(R.id.owner_button);
+        memberButton = findViewById(R.id.member_button);
+    }
+
+    private void setupClickListeners() {
+        backButton.setOnClickListener(v -> finish());
 
         ownerButton.setOnClickListener(v -> {
-            // Add navigation to owner screen here
+            Toast.makeText(this, "Owner Screen", Toast.LENGTH_SHORT).show();
+            // Add navigation here
+            // Intent intent = new Intent(BuyOrSellActivity.this, OwnerActivity.class);
+            // startActivity(intent);
         });
 
         memberButton.setOnClickListener(v -> {
-            // Add navigation to member screen here
+            Toast.makeText(this, "Member Screen", Toast.LENGTH_SHORT).show();
+            // Add navigation here
+            // Intent intent = new Intent(BuyOrSellActivity.this, MemberActivity.class);
+            // startActivity(intent);
         });
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    private void setupButtonEffect(final Button button) {
-        button.setOnTouchListener((v, event) -> {
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    button.setBackgroundColor(Color.parseColor("#0D47A1"));
-                    break;
-                case MotionEvent.ACTION_UP:
-                case MotionEvent.ACTION_CANCEL:
-                    button.setBackgroundColor(Color.parseColor("#1565C0"));
-                    break;
+    private void setupBackPressHandler() {
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
             }
-            return false;
         });
     }
 }

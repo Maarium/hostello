@@ -4,5 +4,5 @@
     <string name="how_do_you_want_to_proceed">How do you want\nto proceed?</string>
     <string name="continue_as_member">Continue as a Member</string>
     <string name="continue_as_owner">Continue as an Owner</string>
-
+    <string name="back">Back</string>
 </resources>
