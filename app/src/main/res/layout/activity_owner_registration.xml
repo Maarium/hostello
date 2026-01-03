@@ -23,7 +23,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:src=""
+                android:src="@drawable/ic_back_arrow"
+                android:contentDescription="@string/back"
                 app:tint="@color/dark_blue" />
 
             <TextView
@@ -77,8 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter your full name"
-            android:textColorHint="@color/black"
-            >
+            android:textColorHint="@color/black">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/full_name_input"
@@ -288,20 +288,20 @@
         <!-- REGISTER BUTTON -->
         <androidx.cardview.widget.CardView
             android:id="@+id/register_button"
+            style="@style/FilledButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginTop="24dp"
-            app:cardCornerRadius="28dp"
-            app:cardElevation="6dp"
-            android:background="@color/dark_blue">
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
             <TextView
+                style="@style/FilledButtonTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Create Account"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
 

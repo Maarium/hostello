@@ -58,43 +58,57 @@
             android:textStyle="bold"
             android:lineSpacingExtra="4dp" />
 
-        <!-- Owner Button (Filled) -->
+        <!-- Owner Button (Outlined with Blue Border) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/owner_button"
-            style="@style/FilledButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#1565C0"
+            app:cardBackgroundColor="@android:color/white">
 
             <TextView
-                style="@style/FilledButtonTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/continue_as_owner" />
+                android:text="@string/continue_as_owner"
+                android:textColor="#1565C0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
 
         </androidx.cardview.widget.CardView>
 
-        <!-- Member Button (Outlined/Unfilled with Border) -->
+        <!-- Member Button (Outlined with Blue Border) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/member_button"
-            style="@style/OutlinedButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#1565C0"
+            app:cardBackgroundColor="@android:color/white">
 
             <TextView
-                style="@style/OutlinedButtonTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/continue_as_member" />
+                android:text="@string/continue_as_member"
+                android:textColor="#1565C0"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
 
         </androidx.cardview.widget.CardView>
 
