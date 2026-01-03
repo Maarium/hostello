@@ -3,6 +3,7 @@ package com.example.hostello;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,27 +45,13 @@ public class buy_or_sell extends AppCompatActivity {
         backButton.setOnClickListener(v -> finish());
 
         ownerButton.setOnClickListener(v -> {
-<<<<<<< HEAD
-            Toast.makeText(this, "Owner Screen", Toast.LENGTH_SHORT).show();
-            // Add navigation here
-            // Intent intent = new Intent(BuyOrSellActivity.this, OwnerActivity.class);
-            //startActivity(intent);
-        });
-
-        memberButton.setOnClickListener(v -> {
-            Toast.makeText(this, "Member phone Screen", Toast.LENGTH_SHORT).show();
-            // Add navigation here
-            Intent intent = new Intent(buy_or_sell.this, PhoneNumber.class);
-            startActivity(intent);
-=======
             Intent intent = new Intent(buy_or_sell.this, OwnerActivity.class);
             startActivity(intent);
         });
 
         memberButton.setOnClickListener(v -> {
-            // Intent intent = new Intent(BuyOrSellActivity.this, MemberActivity.class);
-            // startActivity(intent);
->>>>>>> 92307587e339c21a09215f9c174184d7aa02c408
+            Intent intent = new Intent(buy_or_sell.this, PhoneNumber.class);
+            startActivity(intent);
         });
     }
 

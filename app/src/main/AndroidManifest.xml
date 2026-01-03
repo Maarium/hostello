@@ -8,13 +8,7 @@
         android:roundIcon="@drawable/host_logo_02"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
-        <activity
-<<<<<<< HEAD
-            android:name=".PhoneNumber"
-=======
-            android:name=".OwnerRegistrationActivity"
->>>>>>> 92307587e339c21a09215f9c174184d7aa02c408
-            android:exported="false" />
+
         <!-- Splash Screen Activity -->
         <activity
             android:name=".MainActivity"
@@ -22,29 +16,40 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Intro Activity -->
+        </activity>
+
+        <!-- Intro Activity -->
         <activity
             android:name=".intro"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Buy or Sell Activity -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- Buy or Sell Activity -->
         <activity
             android:name=".buy_or_sell"
             android:exported="false"
-<<<<<<< HEAD
-=======
-            android:theme="@style/Theme.Hostello" /> <!-- Owner Activity -->
+            android:theme="@style/Theme.Hostello" />
+
+        <!-- Phone Number Activity -->
+        <activity
+            android:name=".PhoneNumber"
+            android:exported="false"
+            android:theme="@style/Theme.Hostello" />
+
+        <!-- Owner Activity -->
         <activity
             android:name=".OwnerActivity"
             android:exported="false"
->>>>>>> 92307587e339c21a09215f9c174184d7aa02c408
-            android:theme="@style/Theme.Hostello" /> <!-- Home Activity -->
+            android:theme="@style/Theme.Hostello" />
+
+        <!-- Home Activity -->
         <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.Hostello" />
+
     </application>
 
 </manifest>
