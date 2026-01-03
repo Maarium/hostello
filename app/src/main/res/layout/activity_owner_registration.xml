@@ -287,6 +287,24 @@
 
         <!-- REGISTER BUTTON -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/registration_submit_button"
+            style="@style/FilledButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                style="@style/FilledButtonTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Submit"
+                android:textSize="16sp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
             android:id="@+id/register_button"
             style="@style/FilledButtonStyle"
             android:layout_width="match_parent"
@@ -301,7 +319,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Create Account"
+                android:text="Continue"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>
 
