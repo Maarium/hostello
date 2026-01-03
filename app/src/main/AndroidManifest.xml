@@ -9,12 +9,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
         <activity
+<<<<<<< Updated upstream
             android:name=".buy_or_sell"
             android:exported="false" />
         <activity
             android:name=".intro"
+=======
+            android:name=".intro2"
+>>>>>>> Stashed changes
             android:exported="false" />
-        <!-- Splash Screen Activity -->
+        <activity
+            android:name=".intro"
+            android:exported="false" /> <!-- Splash Screen Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
