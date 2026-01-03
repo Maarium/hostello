@@ -26,23 +26,28 @@
         <activity
             android:name=".intro"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Buy or Sell Activity -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- Buy or Sell Activity -->
         <activity
             android:name=".buy_or_sell"
             android:exported="false"
-            android:theme="@style/Theme.Hostello" /> <!-- Phone Number Activity -->
+            android:theme="@style/Theme.Hostello" />
+        <!-- Phone Number Activity -->
         <activity
             android:name=".PhoneNumber"
             android:exported="false"
-            android:theme="@style/Theme.Hostello" /> <!-- Owner Activity -->
+            android:theme="@style/Theme.Hostello" />
+        <!-- Owner Activity -->
         <activity
             android:name=".OwnerActivity"
             android:exported="false"
-            android:theme="@style/Theme.Hostello" /> <!-- OwnerRegistrationActivity -->
+            android:theme="@style/Theme.Hostello" />
+        <!-- OwnerRegistrationActivity -->
         <activity
             android:name=".OwnerRegistrationActivity"
             android:exported="false"
-            android:theme="@style/Theme.Hostello" /> <!-- Home Activity -->
+            android:theme="@style/Theme.Hostello" />
+        <!-- Home Activity -->
         <activity
             android:name=".HomeActivity"
             android:exported="false"

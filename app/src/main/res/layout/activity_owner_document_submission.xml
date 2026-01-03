@@ -24,35 +24,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="20dp"
-                android:background="@color/white">
+                android:padding="24dp"
+                android:background="#FFFFFF">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/host_logo_02"
-                    android:contentDescription="Hostel Icon"
-                     />
+                    android:contentDescription="Hostel Icon" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="16dp"
                     android:gravity="center"
                     android:text="Hostel Details Submission"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textColor="#1976D2"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.02" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="6dp"
                     android:gravity="center"
                     android:text="Fill in your hostel information"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textColor="#616161"
+                    android:textSize="15sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

@@ -1,5 +1,6 @@
 package com.example.hostello;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,6 +22,7 @@ public class OwnerRegistrationActivity extends AppCompatActivity {
     private CheckBox termsCheckbox;
     private CardView registerButton;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
