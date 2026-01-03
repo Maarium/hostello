@@ -8,9 +8,7 @@
         android:roundIcon="@drawable/host_logo_02"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
-        <activity
-            android:name=".intro"
-            android:exported="false" />
+
         <!-- Splash Screen Activity -->
         <activity
             android:name=".MainActivity"
@@ -18,14 +16,28 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Main App Activity -->
+        </activity>
+
+        <!-- Intro Activity -->
+        <activity
+            android:name=".intro"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- Buy or Sell Activity -->
+        <activity
+            android:name=".buy_or_sell"
+            android:exported="false"
+            android:theme="@style/Theme.Hostello" />
+
+        <!-- Home Activity -->
         <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.Hostello" />
+
     </application>
 
 </manifest>
