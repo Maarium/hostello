@@ -5,13 +5,11 @@
     <string name="continue_as_member">Continue as a Member</string>
     <string name="continue_as_owner">Continue as an Owner</string>
     <string name="back">Back</string>
-<<<<<<< HEAD
     <string name="We_will_send_you_a_verifivation_code">We will send you a verifivation code</string>
     <string name="Enter_your_Phone_Number">Enter your Number</string>
     <string name="countrycode">+92</string>
     <string name="continue_button">Continue</string>
     <string name="by_clicking_continue_button_you_are_agreeing_to_our_terms_of_use">By clicking Continue button you are agreeing to our terms of use</string>
-=======
     <string name="owner_portal">Owner Portal</string>
     <string name="welcome_owner">Welcome, Hostel Owner!</string>
     <string name="owner_subtitle">Manage your hostel property with ease and reach more students</string>
