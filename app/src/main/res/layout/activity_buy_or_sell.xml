@@ -66,14 +66,16 @@
             android:layout_marginTop="32dp"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
+            android:foreground="@drawable/outlined_button_background"
             app:cardCornerRadius="28dp"
             app:cardElevation="0dp"
             app:strokeWidth="2dp"
             app:strokeColor="#1565C0"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardBackgroundColor="@android:color/white"
+            app:rippleColor="#1565C0">
 
             <TextView
+                android:id="@+id/owner_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -93,14 +95,16 @@
             android:layout_marginTop="16dp"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
+            android:foreground="@drawable/outlined_button_background"
             app:cardCornerRadius="28dp"
             app:cardElevation="0dp"
             app:strokeWidth="2dp"
             app:strokeColor="#1565C0"
-            app:cardBackgroundColor="@android:color/white">
+            app:cardBackgroundColor="@android:color/white"
+            app:rippleColor="#1565C0">
 
             <TextView
+                android:id="@+id/member_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

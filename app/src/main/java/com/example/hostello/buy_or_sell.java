@@ -1,21 +1,26 @@
 package com.example.hostello;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import com.google.android.material.card.MaterialCardView;
 
 public class buy_or_sell extends AppCompatActivity {
 
-    private CardView ownerButton;
-    private CardView memberButton;
+    private MaterialCardView ownerButton;
+    private MaterialCardView memberButton;
+    private TextView ownerText;
+    private TextView memberText;
     private ImageButton backButton;
 
     @Override
@@ -32,6 +37,7 @@ public class buy_or_sell extends AppCompatActivity {
 
         initializeViews();
         setupClickListeners();
+        setupHoverEffects();
         setupBackPressHandler();
     }
 
@@ -39,6 +45,8 @@ public class buy_or_sell extends AppCompatActivity {
         backButton = findViewById(R.id.back_button);
         ownerButton = findViewById(R.id.owner_button);
         memberButton = findViewById(R.id.member_button);
+        ownerText = findViewById(R.id.owner_text);
+        memberText = findViewById(R.id.member_text);
     }
 
     private void setupClickListeners() {
@@ -52,6 +60,30 @@ public class buy_or_sell extends AppCompatActivity {
         memberButton.setOnClickListener(v -> {
             Intent intent = new Intent(buy_or_sell.this, PhoneNumber.class);
             startActivity(intent);
+        });
+    }
+
+    private void setupHoverEffects() {
+        setupButtonHover(ownerButton, ownerText);
+        setupButtonHover(memberButton, memberText);
+    }
+
+    private void setupButtonHover(MaterialCardView button, TextView textView) {
+        button.setOnTouchListener((v, event) -> {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    // Fill with blue on press
+                    button.setCardBackgroundColor(Color.parseColor("#1565C0"));
+                    textView.setTextColor(Color.WHITE);
+                    break;
+                case MotionEvent.ACTION_UP:
+                case MotionEvent.ACTION_CANCEL:
+                    // Return to white on release
+                    button.setCardBackgroundColor(Color.WHITE);
+                    textView.setTextColor(Color.parseColor("#1565C0"));
+                    break;
+            }
+            return false; // Return false to allow click events to process
         });
     }
 
