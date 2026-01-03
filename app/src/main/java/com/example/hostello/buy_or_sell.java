@@ -1,5 +1,6 @@
 package com.example.hostello;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -9,17 +10,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class buy_or_sell extends AppCompatActivity {
 
-    private Button ownerButton;
-    private Button memberButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy_or_sell);
 
         // Initialize buttons using the correct IDs from XML
-        ownerButton = findViewById(R.id.owner_button);
-        memberButton = findViewById(R.id.member_button);
+        Button ownerButton = findViewById(R.id.owner_button);
+        Button memberButton = findViewById(R.id.member_button);
 
         // Set up hover/press effects for owner button
         setupButtonEffect(ownerButton);
@@ -47,6 +45,7 @@ public class buy_or_sell extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void setupButtonEffect(final Button button) {
         button.setOnTouchListener(new View.OnTouchListener() {
             @Override
