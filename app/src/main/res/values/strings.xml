@@ -9,18 +9,31 @@
     <string name="welcome_owner">Welcome, Hostel Owner!</string>
     <string name="owner_subtitle">Manage your hostel property with ease and reach more students</string>
     <string name="what_you_can_do">What You Can Do</string>
-
     <string name="feature_1_title">List Your Property</string>
     <string name="feature_1_desc">Add your hostel details, room types, pricing, and amenities to attract potential tenants</string>
-
     <string name="feature_2_title">Manage Bookings</string>
     <string name="feature_2_desc">Track room availability, accept or decline booking requests, and manage tenant information</string>
-
     <string name="feature_3_title">Receive Payments</string>
     <string name="feature_3_desc">Get secure payments directly through the app with detailed transaction history</string>
-
     <string name="feature_4_title">Analytics &amp; Reports</string>
     <string name="feature_4_desc">View occupancy rates, revenue insights, and tenant feedback to improve your service</string>
-
     <string name="get_started">Get Started</string>
+    <string name="owner_registration">Owner Registration</string>
+    <string name="create_your_account">Create Your Account</string>
+    <string name="fill_details_to_register">Fill in your details to register as a hostel owner</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="hostel_name">Hostel Name</string>
+    <string name="hostel_address">Hostel Address</string>
+    <string name="city">City</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="agree_terms">I agree to the Terms and Conditions</string>
+    <string name="register">Register</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="login">Login</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="confirm">Confirm</string>
 </resources>
