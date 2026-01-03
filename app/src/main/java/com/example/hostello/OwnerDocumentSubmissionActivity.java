@@ -1,106 +1,69 @@
-// HostelOwnerActivity.java
 package com.example.hostello;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.material.tabs.TabLayout;
-import java.util.ArrayList;
-import java.util.List;
 
 public class OwnerDocumentSubmissionActivity extends AppCompatActivity {
 
-    private ImageView ownerProfileImg;
-    private TextView ownerNameTxt, hostelNameTxt, hostelAddressTxt, contactTxt, emailTxt;
-    private TabLayout tabLayout;
-    private RecyclerView imagesRecyclerView;
-    private ImageAdapter imageAdapter;
+    private static final int ROOM_IMAGES = 1;
+    private static final int FURNITURE_IMAGES = 2;
+    private static final int FACILITY_IMAGES = 3;
 
-    private List<Integer> roomImages;
-    private List<Integer> documentImages;
+    EditText etHostelName, etHostelAddress, etFacilities;
+    Button btnRoomImages, btnFurnitureImages, btnFacilityImages, btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_document_submission);
 
-        initializeViews();
-        setupData();
-        setupRecyclerView();
-        setupTabLayout();
+        etHostelName = findViewById(R.id.etHostelName);
+        etHostelAddress = findViewById(R.id.etHostelAddress);
+        etFacilities = findViewById(R.id.etFacilities);
+
+        btnRoomImages = findViewById(R.id.btnRoomImages);
+        btnFurnitureImages = findViewById(R.id.btnFurnitureImages);
+        btnFacilityImages = findViewById(R.id.btnFacilityImages);
+        btnSubmit = findViewById(R.id.btnSubmit);
+
+        btnRoomImages.setOnClickListener(v -> selectImages(ROOM_IMAGES));
+        btnFurnitureImages.setOnClickListener(v -> selectImages(FURNITURE_IMAGES));
+        btnFacilityImages.setOnClickListener(v -> selectImages(FACILITY_IMAGES));
+
+        btnSubmit.setOnClickListener(v -> submitForm());
     }
 
-    private void initializeViews() {
-        ownerProfileImg = findViewById(R.id.ownerProfileImg);
-        ownerNameTxt = findViewById(R.id.ownerNameTxt);
-        hostelNameTxt = findViewById(R.id.hostelNameTxt);
-        hostelAddressTxt = findViewById(R.id.hostelAddressTxt);
-        contactTxt = findViewById(R.id.contactTxt);
-        emailTxt = findViewById(R.id.emailTxt);
-        tabLayout = findViewById(R.id.tabLayout);
-        imagesRecyclerView = findViewById(R.id.imagesRecyclerView);
+    private void selectImages(int requestCode) {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        startActivityForResult(intent, requestCode);
     }
 
-    private void setupData() {
-        // Set owner information
-        ownerNameTxt.setText("Ahmed Hassan");
-        hostelNameTxt.setText("Sunshine Boys Hostel");
-        hostelAddressTxt.setText("123 Canal Road, Lahore");
-        contactTxt.setText("+92 300 1234567");
-        emailTxt.setText("ahmed.hassan@example.com");
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-        // Initialize room images (replace with your actual drawable resources)
-        roomImages = new ArrayList<>();
-        roomImages.add(R.drawable.room1);
-        roomImages.add(R.drawable.room2);
-        roomImages.add(R.drawable.room3);
-        roomImages.add(R.drawable.room4);
-        roomImages.add(R.drawable.room5);
-        roomImages.add(R.drawable.room6);
-
-        // Initialize document images
-        documentImages = new ArrayList<>();
-        documentImages.add(R.drawable.doc_license);
-        documentImages.add(R.drawable.doc_cnic);
-        documentImages.add(R.drawable.doc_registration);
-        documentImages.add(R.drawable.doc_noc);
+        if (resultCode == RESULT_OK && data != null) {
+            Toast.makeText(this, "Images selected successfully", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    private void setupRecyclerView() {
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        imagesRecyclerView.setLayoutManager(layoutManager);
+    private void submitForm() {
+        String hostelName = etHostelName.getText().toString().trim();
+        String address = etHostelAddress.getText().toString().trim();
 
-        imageAdapter = new ImageAdapter(this, roomImages);
-        imagesRecyclerView.setAdapter(imageAdapter);
-    }
-
-    private void setupTabLayout() {
-        tabLayout.addTab(tabLayout.newTab().setText("Room Images"));
-        tabLayout.addTab(tabLayout.newTab().setText("Documents"));
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-                    imageAdapter.updateImages(roomImages);
-                } else {
-                    imageAdapter.updateImages(documentImages);
-                }
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {}
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {}
-        });
+        if (hostelName.isEmpty() || address.isEmpty()) {
+            Toast.makeText(this, "Please fill all required fields", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Hostel details submitted", Toast.LENGTH_LONG).show();
+        }
     }
 }
-
-
-// ========================================================================
-// ImageAdapter.java (CREATE THIS AS A SEPARATE FILE)
-// ========================================================================

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/host_logo_02"
@@ -8,6 +8,7 @@
         android:roundIcon="@drawable/host_logo_02"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
+ 
         <activity
             android:name=".OwnerDocumentSubmissionActivity"
             android:exported="false" />
