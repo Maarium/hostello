@@ -5,4 +5,22 @@
     <string name="continue_as_member">Continue as a Member</string>
     <string name="continue_as_owner">Continue as an Owner</string>
     <string name="back">Back</string>
+    <string name="owner_portal">Owner Portal</string>
+    <string name="welcome_owner">Welcome, Hostel Owner!</string>
+    <string name="owner_subtitle">Manage your hostel property with ease and reach more students</string>
+    <string name="what_you_can_do">What You Can Do</string>
+
+    <string name="feature_1_title">List Your Property</string>
+    <string name="feature_1_desc">Add your hostel details, room types, pricing, and amenities to attract potential tenants</string>
+
+    <string name="feature_2_title">Manage Bookings</string>
+    <string name="feature_2_desc">Track room availability, accept or decline booking requests, and manage tenant information</string>
+
+    <string name="feature_3_title">Receive Payments</string>
+    <string name="feature_3_desc">Get secure payments directly through the app with detailed transaction history</string>
+
+    <string name="feature_4_title">Analytics &amp; Reports</string>
+    <string name="feature_4_desc">View occupancy rates, revenue insights, and tenant feedback to improve your service</string>
+
+    <string name="get_started">Get Started</string>
 </resources>

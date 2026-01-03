@@ -3,6 +3,7 @@ package com.example.hostello;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,17 +12,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class buy_or_sell extends AppCompatActivity {
+public class OwnerActivity extends AppCompatActivity {
 
-    private CardView ownerButton;
-    private CardView memberButton;
     private ImageButton backButton;
+    private CardView getStartedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_buy_or_sell);
+        setContentView(R.layout.activity_onwer);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -36,20 +36,16 @@ public class buy_or_sell extends AppCompatActivity {
 
     private void initializeViews() {
         backButton = findViewById(R.id.back_button);
-        ownerButton = findViewById(R.id.owner_button);
-        memberButton = findViewById(R.id.member_button);
+        getStartedButton = findViewById(R.id.get_started_button);
     }
 
     private void setupClickListeners() {
         backButton.setOnClickListener(v -> finish());
 
-        ownerButton.setOnClickListener(v -> {
-            Intent intent = new Intent(buy_or_sell.this, OwnerActivity.class);
-            startActivity(intent);
-        });
-
-        memberButton.setOnClickListener(v -> {
-            // Intent intent = new Intent(BuyOrSellActivity.this, MemberActivity.class);
+        getStartedButton.setOnClickListener(v -> {
+            Toast.makeText(this, "Proceeding to registration...", Toast.LENGTH_SHORT).show();
+            // Navigate to registration or next screen
+            // Intent intent = new Intent(OwnerActivity.this, OwnerRegistrationActivity.class);
             // startActivity(intent);
         });
     }
