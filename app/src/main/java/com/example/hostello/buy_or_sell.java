@@ -1,5 +1,6 @@
 package com.example.hostello;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -47,14 +48,14 @@ public class buy_or_sell extends AppCompatActivity {
             Toast.makeText(this, "Owner Screen", Toast.LENGTH_SHORT).show();
             // Add navigation here
             // Intent intent = new Intent(BuyOrSellActivity.this, OwnerActivity.class);
-            // startActivity(intent);
+            //startActivity(intent);
         });
 
         memberButton.setOnClickListener(v -> {
-            Toast.makeText(this, "Member Screen", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Member phone Screen", Toast.LENGTH_SHORT).show();
             // Add navigation here
-            // Intent intent = new Intent(BuyOrSellActivity.this, MemberActivity.class);
-            // startActivity(intent);
+            Intent intent = new Intent(buy_or_sell.this, PhoneNumber.class);
+            startActivity(intent);
         });
     }
 
