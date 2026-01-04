@@ -113,6 +113,21 @@
 
         </LinearLayout>
 
+<<<<<<< HEAD
+=======
+        <!-- Back Button ON TOP of gradient section -->
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="16dp"
+            android:layout_gravity="top|start"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back_arrow"
+            app:tint="@color/dark_blue" />
+
+>>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
     </FrameLayout>
 
 </LinearLayout>

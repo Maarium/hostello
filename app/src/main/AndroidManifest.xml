@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/host_logo_02"
@@ -8,7 +8,9 @@
         android:roundIcon="@drawable/host_logo_02"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
+
         <activity
+<<<<<<< HEAD
             android:name=".TermsOfUse"
             android:exported="false" />
         <activity
@@ -19,6 +21,9 @@
             android:exported="false" />
         <activity
             android:name=".OwnerRegistrationActivity"
+=======
+            android:name=".OwnerDocumentSubmissionActivity"
+>>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
             android:exported="false" />
         <!-- Splash Screen Activity -->
         <activity
@@ -42,11 +47,27 @@
             android:name=".buy_or_sell"
             android:exported="false"
             android:theme="@style/Theme.Hostello" />
+<<<<<<< HEAD
+=======
+        <!-- Phone Number Activity -->
+        <activity
+            android:name=".PhoneNumber"
+            android:exported="false"
+            android:theme="@style/Theme.Hostello" />
+>>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
         <!-- Owner Activity -->
         <activity
             android:name=".OwnerActivity"
             android:exported="false"
             android:theme="@style/Theme.Hostello" />
+<<<<<<< HEAD
+=======
+        <!-- OwnerRegistrationActivity -->
+        <activity
+            android:name=".OwnerRegistrationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Hostello" />
+>>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
         <!-- Home Activity -->
         <activity
             android:name=".HomeActivity"

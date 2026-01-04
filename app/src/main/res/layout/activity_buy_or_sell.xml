@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".buy_or_sell">
+
     <!-- Back Button -->
     <ImageButton
         android:id="@+id/back_button"
@@ -17,7 +18,7 @@
 
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/back"
-        android:src="@android:drawable/ic_menu_revert"
+        android:src="@drawable/ic_back_arrow"
         app:tint="@color/dark_blue" />
 
     <!-- Logo -->
@@ -58,55 +59,63 @@
             android:textStyle="bold"
             android:lineSpacingExtra="4dp" />
 
-        <!-- Owner Button -->
-        <androidx.cardview.widget.CardView
+        <!-- Owner Button (Outlined with Blue Border) -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/owner_button"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="32dp"
-            app:cardCornerRadius="28dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#1565C0"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="@drawable/outlined_button_background"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#1565C0"
+            app:cardBackgroundColor="@android:color/white"
+            app:rippleColor="#1565C0">
 
             <TextView
+                android:id="@+id/owner_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/continue_as_owner"
-                android:textColor="#FFFFFF"
+                android:textColor="#1565C0"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-medium" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
-        <!-- Member Button -->
-        <androidx.cardview.widget.CardView
+        <!-- Member Button (Outlined with Blue Border) -->
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/member_button"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
-            app:cardCornerRadius="28dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#1565C0"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:foreground="@drawable/outlined_button_background"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#1565C0"
+            app:cardBackgroundColor="@android:color/white"
+            app:rippleColor="#1565C0">
 
             <TextView
+                android:id="@+id/member_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="@string/continue_as_member"
-                android:textColor="#FFFFFF"
+                android:textColor="#1565C0"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif-medium" />
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 

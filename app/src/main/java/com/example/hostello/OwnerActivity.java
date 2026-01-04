@@ -35,7 +35,7 @@ public class OwnerActivity extends AppCompatActivity {
 
     private void initializeViews() {
         backButton = findViewById(R.id.back_button);
-        getStartedButton = findViewById(R.id.get_started_button);
+        getStartedButton = findViewById(R.id.get_started_button_owner);
     }
 
     private void setupClickListeners() {

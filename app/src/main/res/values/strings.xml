@@ -5,13 +5,19 @@
     <string name="continue_as_member">Continue as a Member</string>
     <string name="continue_as_owner">Continue as an Owner</string>
     <string name="back">Back</string>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
     <string name="We_will_send_you_a_verifivation_code">We will send you a verifivation code</string>
     <string name="Enter_your_Phone_Number">Enter your Number</string>
     <string name="countrycode">+92</string>
     <string name="continue_button">Continue</string>
     <string name="by_clicking_continue_button_you_are_agreeing_to_our_terms_of_use">By clicking Continue button you are agreeing to our terms of use</string>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
     <string name="owner_portal">Owner Portal</string>
     <string name="welcome_owner">Welcome, Hostel Owner!</string>
     <string name="owner_subtitle">Manage your hostel property with ease and reach more students</string>
@@ -43,9 +49,13 @@
     <string name="phone">Phone</string>
     <string name="address">Address</string>
     <string name="confirm">Confirm</string>
+<<<<<<< HEAD
     <string name="enter_4_digit_code">Enter 4 digit code</string>
     <string name="code_hint">- - - -</string>
     <string name="resend_code">resend code ?</string>
     <string name="confirm_button">Confirm</string>
 
+=======
+    >>>>>>> 92307587e339c21a09215f9c174184d7aa02c408
+>>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
 </resources>
