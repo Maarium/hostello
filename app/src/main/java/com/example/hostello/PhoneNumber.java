@@ -1,105 +1,79 @@
 package com.example.hostello;
-
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import androidx.cardview.widget.CardView;
 
 public class PhoneNumber extends AppCompatActivity {
-
-    private ImageButton back;
-    private EditText phoneInput;
-    private TextView termsText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Edge-to-edge layout
-        EdgeToEdge.enable(this);
-
-        // Set layout
         setContentView(R.layout.activity_phone_number);
 
-        // Apply padding for system bars
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        // Initialize views
-        initializeViews();
-
-        // Setup click listeners
-        setupClickListeners();
-
-        // Setup back press handler
-        setupBackPressHandler();
-
-        // Setup clickable terms link
-        setupTermsLink();
-    }
-
-    private void initializeViews() {
-        back = findViewById(R.id.back);
-        phoneInput = findViewById(R.id.phone_input);
-        termsText = findViewById(R.id.phone_continue_agree);
-    }
-
-    private void setupClickListeners() {
-        // Back button closes activity
-        back.setOnClickListener(v -> finish());
-
-        // You can also add a listener to Continue button here if needed
-        findViewById(R.id.continue_button).setOnClickListener(v -> {
-            // Example: move to next activity after phone input validation
-            String phone = phoneInput.getText().toString().trim();
-            if (!phone.isEmpty()) {
-                // Proceed to next activity
-                // startActivity(new Intent(this, NextActivity.class));
-            }
-        });
-    }
-
-    private void setupBackPressHandler() {
-        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+        // ===== Back Button =====
+        ImageButton backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void handleOnBackPressed() {
-                finish();
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
-    }
 
-    private void setupTermsLink() {
-        String text = "By clicking Continue button you are agreeing to our terms of use";
-        SpannableString ss = new SpannableString(text);
+        // ===== Terms of Use =====
+        TextView termsText = findViewById(R.id.phone_continue_agree);
+        String fullText = "By Continue you are accepting our terms of use";
+        SpannableString spannable = new SpannableString(fullText);
 
-        int start = text.indexOf("terms of use");
+        int start = fullText.indexOf("terms of use");
         int end = start + "terms of use".length();
 
-        ss.setSpan(new ClickableSpan() {
+        spannable.setSpan(new ClickableSpan() {
             @Override
             public void onClick(View widget) {
-                // Open TermsActivity
-                startActivity(new Intent(PhoneNumber.this, intro.class));
+                Intent intent = new Intent(PhoneNumber.this, TermsOfUse.class);
+                startActivity(intent);
             }
-        }, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-        termsText.setText(ss);
+            @Override
+            public void updateDrawState(TextPaint ds) {
+                ds.setColor(Color.parseColor("#007AFF"));
+                ds.setUnderlineText(false);
+            }
+        }, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        termsText.setText(spannable);
         termsText.setMovementMethod(LinkMovementMethod.getInstance());
+
+        // ===== Continue Button =====
+        CardView continueButton = findViewById(R.id.member_continue_btn);
+        continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText phoneInput = findViewById(R.id.phone_input);
+                String phoneNumber = phoneInput.getText().toString().trim();
+
+                if (phoneNumber.isEmpty()) {
+                    phoneInput.setError("Please enter your phone number");
+                    return;
+                }
+
+                // Navigate to next activity
+                Intent intent = new Intent(PhoneNumber.this, MemberVerificationCode.class);
+                intent.putExtra("phone_number", phoneNumber); // optional
+                startActivity(intent);
+            }
+        });
     }
 }

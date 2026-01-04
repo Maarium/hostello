@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/gradient_bg">
 
-        <!-- Back Button (NO LEFT GAP) -->
+        <!-- Back Button  -->
+
         <ImageButton
             android:id="@+id/back"
             android:layout_width="48dp"
@@ -27,6 +28,7 @@
             app:tint="@color/dark_blue" />
 
         <!-- Main Content -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,83 +36,75 @@
             android:gravity="center_horizontal"
             android:padding="20dp">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/splash"
-                android:scaleType="fitCenter"
-                android:layout_marginBottom="20dp" />
-
             <TextView
-                android:id="@+id/phone_input_text"
+                android:id="@+id/member_verification_code_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Enter_your_Phone_Number"
+                android:text="@string/enter_4_digit_code"
                 android:textAlignment="center"
                 android:textColor="@color/dark_blue"
                 android:textSize="28sp"
                 android:textStyle="bold"
-                android:layout_marginBottom="8dp" />
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp" />
 
             <TextView
-                android:id="@+id/phone_message"
+                android:id="@+id/member_ver_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/We_will_send_you_a_verifivation_code"
-                android:textAlignment="center"
+                android:text="code"
                 android:textColor="@color/blue"
                 android:textSize="14sp"
+                android:layout_marginTop="80px"
                 android:layout_marginBottom="20dp" />
 
+            <!--Enter verification code-->
+
             <EditText
-                android:id="@+id/phone_input"
+                android:id="@+id/member_four_digit_input"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="@string/countrycode"
-                android:inputType="phone"
+                android:hint="@string/code_hint"
+                android:inputType="numberPassword"
                 android:padding="12dp"
                 android:textColor="@color/blue"
-                android:textColorHint="@color/dark_blue"
+                android:textColorHint="@color/text_gray"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:maxLength="15"
                 android:layout_marginBottom="20dp" />
 
+            <!--confirm OTP-->
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/member_continue_btn"
+                android:id="@+id/member_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                app:cardCornerRadius="100dp"
+                app:cardCornerRadius="28dp"
                 app:cardElevation="4dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground"
                 app:cardBackgroundColor="#1565C0">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/continue_button"
+                    android:text="@string/confirm_button"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
+            <!-- resend code -->
+
             <TextView
-                android:id="@+id/phone_continue_agree"
+                android:id="@+id/code_confirm_agree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textSize="12sp"
-                android:clickable="false"
-                android:focusable="false"
-                android:linksClickable="true"
-                android:textColor="@color/text_gray"
-                android:text="By clicking Continue button you are agreeing to our terms of use" />
-
+                android:textColor="@color/blue"
+                android:text="@string/resend_code"/>
         </LinearLayout>
 
     </FrameLayout>
