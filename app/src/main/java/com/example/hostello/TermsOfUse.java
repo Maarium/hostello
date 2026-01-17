@@ -1,6 +1,9 @@
 package com.example.hostello;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +18,35 @@ public class TermsOfUse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_terms_of_use);
+        // ===== Back Button =====
+        ImageButton backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+
+
+
+        });
+
+        //        TERMS BACK BUTTON
+
+        Button TermsBackButton = findViewById(R.id.terms_back_btn);
+        TermsBackButton.setOnClickListener(new View.OnClickListener()
+
+        {
+            @Override
+            public void onClick(View v){
+                onBackPressed();
+            }
+        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+
         });
     }
 }

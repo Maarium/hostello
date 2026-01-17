@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
 
 public class PhoneNumber extends AppCompatActivity {
 
@@ -57,7 +57,7 @@ public class PhoneNumber extends AppCompatActivity {
         termsText.setMovementMethod(LinkMovementMethod.getInstance());
 
         // ===== Continue Button =====
-        CardView continueButton = findViewById(R.id.member_continue_btn);
+        CardView continueButton = findViewById(R.id.phone_to_otp_btn);
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,7 +70,7 @@ public class PhoneNumber extends AppCompatActivity {
                 }
 
                 // Navigate to next activity
-                Intent intent = new Intent(PhoneNumber.this, MemberVerificationCode.class);
+                Intent intent = new Intent(PhoneNumber.this, OtpActivity.class);
                 intent.putExtra("phone_number", phoneNumber); // optional
                 startActivity(intent);
             }

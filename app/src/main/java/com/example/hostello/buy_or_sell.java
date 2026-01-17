@@ -5,23 +5,20 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
-<<<<<<< HEAD
+
 import android.widget.Toast;
 
-=======
+
 import android.widget.TextView;
->>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-<<<<<<< HEAD
-=======
+
 import com.google.android.material.card.MaterialCardView;
 
->>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
 public class buy_or_sell extends AppCompatActivity {
 
     private MaterialCardView ownerButton;
@@ -67,8 +64,7 @@ public class buy_or_sell extends AppCompatActivity {
         memberButton.setOnClickListener(v -> {
             Intent intent = new Intent(buy_or_sell.this, PhoneNumber.class);
             startActivity(intent);
-<<<<<<< HEAD
-=======
+
         });
     }
 
@@ -93,7 +89,6 @@ public class buy_or_sell extends AppCompatActivity {
                     break;
             }
             return false; // Return false to allow click events to process
->>>>>>> 42e403928f684d422d07a2a8468bfdc5c88140c0
         });
     }
 
