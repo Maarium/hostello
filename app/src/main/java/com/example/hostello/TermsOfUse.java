@@ -1,7 +1,7 @@
 package com.example.hostello;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -18,35 +18,27 @@ public class TermsOfUse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_terms_of_use);
-        // ===== Back Button =====
+
         ImageButton backButton = findViewById(R.id.back);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
+        Button termsBackButton = findViewById(R.id.terms_back_btn);
+        Button agreeButton = findViewById(R.id.term_agree_btn);
 
+        backButton.setOnClickListener(v -> goToHome());
+        termsBackButton.setOnClickListener(v -> goToHome());
 
+        // ✅ AGREE BUTTON NAVIGATION
+        agreeButton.setOnClickListener(v -> goToHome());
 
-        });
-
-        //        TERMS BACK BUTTON
-
-        Button TermsBackButton = findViewById(R.id.terms_back_btn);
-        TermsBackButton.setOnClickListener(new View.OnClickListener()
-
-        {
-            @Override
-            public void onClick(View v){
-                onBackPressed();
-            }
-        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-
-
         });
+    }
+
+    private void goToHome() {
+        Intent intent = new Intent(TermsOfUse.this, MainHomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
