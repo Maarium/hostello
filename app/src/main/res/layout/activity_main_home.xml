@@ -32,11 +32,15 @@
                     android:gravity="center_vertical">
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="Welcome 👋"
                         android:textColor="@android:color/white"
                         android:textSize="16sp" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="Find Your Perfect Hostel"
                         android:textColor="@android:color/white"
                         android:textSize="26sp"
@@ -44,6 +48,8 @@
                         android:layout_marginTop="6dp" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="Safe • Affordable • Comfortable"
                         android:textColor="#E3F2FD"
                         android:textSize="14sp"
@@ -81,6 +87,8 @@
                             app:tint="@color/blue" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="Search Hostel"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -109,6 +117,8 @@
                             app:tint="@color/blue" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="My Bookings"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -119,6 +129,8 @@
 
             <!-- FEATURED -->
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Featured Hostels"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -150,17 +162,23 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="Elite Boys Hostel"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="Near University • Free WiFi"
                             android:textSize="13sp"
                             android:textColor="@color/text_gray"
                             android:layout_marginTop="4dp" />
 
                         <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:text="PKR 12,000 / month"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -192,6 +210,8 @@
             android:padding="12dp">
 
             <LinearLayout
+
+                android:layout_height="wrap_content"
                 android:id="@+id/nav_home"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -204,11 +224,15 @@
                     android:src="@android:drawable/ic_menu_view" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Home"
                     android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
+
+                android:layout_height="wrap_content"
                 android:id="@+id/nav_search"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -221,11 +245,15 @@
                     android:src="@android:drawable/ic_menu_search" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Search"
                     android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
+
+                android:layout_height="wrap_content"
                 android:id="@+id/nav_favorites"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -238,11 +266,15 @@
                     android:src="@android:drawable/ic_menu_info_details" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Favorites"
                     android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
+
+                android:layout_height="wrap_content"
                 android:id="@+id/nav_profile"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -255,6 +287,8 @@
                     android:src="@android:drawable/ic_menu_myplaces" />
 
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Profile"
                     android:textSize="12sp" />
             </LinearLayout>
