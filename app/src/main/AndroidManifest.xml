@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,17 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hostello">
 
-
         <!--        OTP ACTIVITY-->
         <activity
             android:name=".OtpActivity"
             android:exported="false" />
         <activity
             android:name=".TermsOfUse"
-            android:exported="false" />
-        <!--        MainHome ACTIVITY-->
-        <activity
-            android:name=".MainHomeActivity"
             android:exported="false" />
          <!-- Splash Screen Activity -->
         <activity
