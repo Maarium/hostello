@@ -9,13 +9,13 @@
     android:background="@color/white"
     tools:context=".OtpActivity">
 
+    <!-- Header Section with Gradient -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/gradient_bg">
 
-        <!-- Back Button  -->
-
+        <!-- Back Button -->
         <ImageButton
             android:id="@+id/back"
             android:layout_width="48dp"
@@ -28,14 +28,26 @@
             app:tint="@color/dark_blue" />
 
         <!-- Main Content -->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:padding="20dp">
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="32dp">
 
+            <!-- Lock Icon -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="40dp"
+                android:src="@android:drawable/ic_lock_idle_lock"
+                app:tint="@color/dark_blue"
+                android:contentDescription="Security lock icon" />
+
+            <!-- Title -->
             <TextView
                 android:id="@+id/member_verification_code_text"
                 android:layout_width="match_parent"
@@ -43,70 +55,188 @@
                 android:text="@string/enter_4_digit_code"
                 android:textAlignment="center"
                 android:textColor="@color/dark_blue"
-                android:textSize="28sp"
+                android:textSize="26sp"
                 android:textStyle="bold"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="40dp" />
+                android:layout_marginTop="20dp"
+                android:letterSpacing="0.02" />
 
+            <!-- Subtitle -->
             <TextView
-                android:id="@+id/member_ver_code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="code"
-                android:textColor="@color/blue"
+                android:text="We've sent a verification code to your phone"
+                android:textAlignment="center"
+                android:textColor="@color/text_gray"
                 android:textSize="14sp"
-                android:layout_marginTop="80px"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:alpha="0.8" />
 
-            <!--Enter verification code-->
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <!-- OTP Input Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Code Label -->
+        <TextView
+            android:id="@+id/member_ver_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verification Code"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <!-- OTP Input Field with Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#E3F2FD"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="24dp">
 
             <EditText
                 android:id="@+id/member_four_digit_input"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:hint="@string/code_hint"
-                android:inputType="numberPassword"
-                android:padding="12dp"
-                android:textColor="@color/blue"
+                android:inputType="number"
+                android:padding="20dp"
+                android:textColor="@color/dark_blue"
                 android:textColorHint="@color/text_gray"
-                android:textSize="24sp"
+                android:textSize="28sp"
                 android:textStyle="bold"
-                android:maxLength="15"
-                android:layout_marginBottom="20dp" />
+                android:maxLength="6"
+                android:gravity="center"
+                android:letterSpacing="0.3"
+                android:background="@android:color/transparent" />
 
-            <!--confirm OTP-->
+        </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/member_confirm"
+        <!-- Confirm Button -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/member_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="#1565C0">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                app:cardCornerRadius="28dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="#1565C0">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:text="@string/confirm_button"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05" />
 
-            <!-- resend code -->
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@android:drawable/ic_menu_send"
+                    app:tint="#FFFFFF"
+                    android:contentDescription="Send icon" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Resend Code Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't receive the code? "
+                android:textSize="14sp"
+                android:textColor="@color/text_gray" />
 
             <TextView
                 android:id="@+id/code_confirm_agree"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:textAlignment="textEnd"
-                android:textSize="12sp"
+                android:text="@string/resend_code"
+                android:textSize="14sp"
                 android:textColor="@color/blue"
-                android:text="@string/resend_code"/>
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="4dp" />
+
         </LinearLayout>
 
-    </FrameLayout>
+        <!-- Timer (Optional) -->
+        <TextView
+            android:id="@+id/resend_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend code in 00:30"
+            android:textSize="12sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!-- Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Security Note -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="20dp"
+        android:background="#F5F5F5">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@android:drawable/ic_secure"
+            app:tint="@color/blue"
+            android:contentDescription="Security icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your information is secure and encrypted"
+            android:textSize="12sp"
+            android:textColor="@color/text_gray"
+            android:layout_marginStart="6dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

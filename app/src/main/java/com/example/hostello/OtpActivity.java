@@ -2,17 +2,21 @@ package com.example.hostello;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class OtpActivity extends AppCompatActivity {
+
+    private static final String TAG = "OtpActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,41 +24,48 @@ public class OtpActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_otp);
 
-        // ===== Edge-to-Edge padding =====
+        // ===== Edge-to-Edge padding (only once) =====
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // ===== Back Button Functionality =====
+        setupBackButton();
+        setupConfirmButton();
+        setupBackPressHandler();
+    }
+
+    private void setupBackButton() {
         ImageButton backButton = findViewById(R.id.back);
         if (backButton != null) {
-            backButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onBackPressed(); // Go back to previous screen
-                }
-            });
+            backButton.setOnClickListener(v -> finish());
+        } else {
+            Log.e(TAG, "Back button not found");
         }
+    }
 
-        // ===== Confirm Button Navigation =====
-        Button confirmButton = findViewById(R.id.member_confirm); // replace with actual button id
+    private void setupConfirmButton() {
+        // If it's a CardView (like your phone_to_otp_btn)
+        CardView confirmButton = findViewById(R.id.member_confirm);
+
         if (confirmButton != null) {
-            confirmButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Navigate to TermsOfUse activity
-                    Intent intent = new Intent(OtpActivity.this, TermsOfUse.class);
-                    startActivity(intent);
-                }
+            confirmButton.setOnClickListener(v -> {
+                // Navigate to TermsOfUse activity
+                Intent intent = new Intent(OtpActivity.this, TermsOfUse.class);
+                startActivity(intent);
             });
+        } else {
+            Log.e(TAG, "Confirm button not found");
         }
+    }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+    private void setupBackPressHandler() {
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                finish();
+            }
         });
     }
 }
