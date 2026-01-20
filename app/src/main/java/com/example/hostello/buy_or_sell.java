@@ -1,15 +1,13 @@
 package com.example.hostello;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ImageButton;
-
-import android.widget.Toast;
-
-
 import android.widget.TextView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
@@ -64,7 +62,6 @@ public class buy_or_sell extends AppCompatActivity {
         memberButton.setOnClickListener(v -> {
             Intent intent = new Intent(buy_or_sell.this, PhoneNumber.class);
             startActivity(intent);
-
         });
     }
 
@@ -73,6 +70,7 @@ public class buy_or_sell extends AppCompatActivity {
         setupButtonHover(memberButton, memberText);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void setupButtonHover(MaterialCardView button, TextView textView) {
         button.setOnTouchListener((v, event) -> {
             switch (event.getAction()) {
@@ -80,6 +78,7 @@ public class buy_or_sell extends AppCompatActivity {
                     // Fill with blue on press
                     button.setCardBackgroundColor(Color.parseColor("#1565C0"));
                     textView.setTextColor(Color.WHITE);
+                    v.performClick(); // Add this for accessibility
                     break;
                 case MotionEvent.ACTION_UP:
                 case MotionEvent.ACTION_CANCEL:
